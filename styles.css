@@ -59,7 +59,7 @@ body {
   justify-content: space-around;
   /* This will distribute space around items */
   min-height: 100vh;
-  overflow: hidden;
+  /*overflow: hidden;
   /* Full viewport height */
 }
 
@@ -90,11 +90,11 @@ h2 {
   transform: translateY(-50%);
 }
 
-.center-wrapper{
+.center-wrapper {
   display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .profile-container {
@@ -209,7 +209,7 @@ h2 {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  align-self: stretch;
+  width:100%;
 }
 
 .activity-image {
@@ -222,10 +222,10 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-self: stretch;
   gap: 10px;
-  flex: 1 0 0;
-  width:100%;
+  flex: 1;
+  width: calc(100% - 96px); /* Subtract the width of the image and gap */
+
 }
 
 .activity-name {
@@ -247,7 +247,7 @@ h2 {
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  align-self: stretch;
+  width: 100%;
   font-size: 12px;
   font-style: normal;
   line-height: 12px;
@@ -260,13 +260,35 @@ h2 {
   width: 100%;
 }
 
-.details .label {
+.details svg {
+  flex-shrink: 0; /* Prevent SVG from shrinking */
+  width: 10px; /* Define a width for your SVG if it's not set within the SVG code */
+  height: 10px; /* Define a height for your SVG if it's not set within the SVG code */
+}
+
+.label {
+  margin: 0px;
+  display: flex;
+  align-items: flex-start;
+  flex-basis: auto;
+  flex-shrink: 1;
+}
+
+.left {
+  flex-grow: 1; /*added*/
+  flex-shrink: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
-  margin:0px;
+  min-width: 0;
 }
+
+.right { 
+  flex-shrink: 0;
+  align-items: center;
+  text-align: right;
+}
+
 
 .divider {
   width: 100%;

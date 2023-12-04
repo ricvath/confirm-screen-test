@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-In Confirmation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="header-group">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M14 1.44828L12.5517 0L7 5.55172L1.44828 2.06652e-06L2.89258e-06 1.44828L5.55172 7L0 12.5517L1.44828 14L7 8.44827L12.5517 14L14 12.5517L8.44827 7L14 1.44828Z"
+        fill="white" />
+    </svg>
+    <h2>You're checked in</h2>
+  </div>
+  <div class="center-wrapper">
+    <div class="profile-area">
+      <div class="profile-container">
+        <img class="circle dashed" alt="dashed cirlce" src="assets/img/dashes.svg" />
+        <img class="circle dotted" alt="dotted cirlce" src="assets/img/dots.svg" />
+        <img class="profile-photo" src="assets/img/max.jpg" alt="profile photo" />
+        <img class="checkmark" src="assets/img/check.svg" alt="green checkmark" />
+      </div>
+    </div>
+
+    <div class="text-area">
+      <div class="time-group">
+        <div>Checked in:</div>
+        <div id="timer">00:00</div>
+        <div>minutes ago</div>
+      </div>
+
+      <div class="name-group">
+        <div id="name">Max Pirsky</div>
+        <div id="membership">Membership No: 116453518</div>
+      </div>
+    </div>
+  </div>
+  <div class="activity-info">
+    <div class="activity-wrapper">
+      <img class="activity-image" src="assets/img/sport.jpg" alt="activity-image" />
+      <div class="activity-text-area">
+        <div class="activity-name">Fitness</div>
+        <div id="date-time">18 Sep, 19:21</div>
+        <div class="activity-description">
+          <div class="details">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M3.5 0C5.43303 0 7 1.59899 7 3.57143C7 6.10451 5.25 8.21429 3.5 10C1.75 8.21429 0 6.13784 0 3.57143C0 1.59899 1.56697 0 3.5 0ZM3.49998 5.00003C4.27317 5.00003 4.89998 4.36043 4.89998 3.57145C4.89998 2.78248 4.27317 2.14288 3.49998 2.14288C2.72678 2.14288 2.09998 2.78248 2.09998 3.57145C2.09998 4.36043 2.72678 5.00003 3.49998 5.00003Z"
+                fill="#A9A9A9" />
+            </svg>
+            <div class="label left">Holmes Place Potsdamer Platz</div>
+            <div class="label right">(Tiergarten)</div>
+          </div>
+          <div class="details">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0 4.49423C0 4.67915 0.0743499 4.85632 0.206334 4.98589L5.11439 9.80431C5.38429 10.0693 5.81738 10.0673 6.08487 9.79993L9.80535 6.08078C10.0729 5.81338 10.0748 5.38044 9.80973 5.11064L4.98945 0.204477C4.85983 0.0725481 4.68261 -0.00177002 4.49763 -0.00177002H0.689363C0.308638 -0.00177002 0 0.306758 0 0.687345V4.49423ZM3.25838 3.25542C3.68977 2.82419 3.68977 2.12501 3.25838 1.69378C2.82699 1.26254 2.12756 1.26254 1.69617 1.69378C1.26478 2.12501 1.26478 2.82419 1.69617 3.25542C2.12756 3.68666 2.82699 3.68666 3.25838 3.25542Z"
+                fill="#53575A" />
+            </svg>
+            <div class="label">Fitness</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="share-button">Share this check-in</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

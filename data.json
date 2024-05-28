@@ -1,0 +1,17 @@
+{
+    "names": [
+        "Richard Horvath",
+        "Maxim Pirsky",
+        "Anna Koslowski",
+        "Jacint Halasz",
+        "Nick Voke",
+        "Sara Ravasio",
+        "Victoria Roznowski",
+        "Leandro Velasco"
+    ],
+    "locations": [
+        { "label": "Holmes Place Potsdamer Platz", "value": "(Tiergarten)" },
+        { "label": "Holmes Place Gendarmenmarkt", "value": "(Mitte)" },
+        { "label": "Holmes Place Bismarckstrasse", "value": "(Charlottenburg)" }
+    ]
+}

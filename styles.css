@@ -69,36 +69,22 @@
 
   .form-container {
     background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    padding: 20px 16px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
     text-align: center;
 }
 
-/* Heading styles */
-.form-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.form-container button {
-    display: block;
-    padding: 16px 0px;
-    width:100%;
-  
-    font-family: 'APC', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    line-height: 17px;
-    letter-spacing: 0.18px;
-  
-    color: #3079DC;
-    border-radius: 4px;
-    background-color: #fff;
-    border: 1px solid #3079DC;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: stretch;
+  align-items: stretch;
 }
 
 /* Grouping form elements */
@@ -355,7 +341,7 @@
     background: #EBEBEB;
   }
   
-  .share-button {
+  .btn {
     display: flex;
     padding: 16px 0px;
     justify-content: center;
@@ -369,6 +355,7 @@
     letter-spacing: 0.18px;
   
     color: #3079DC;
+    background-color: #fff;
     border-radius: 4px;
     border: 1px solid #3079DC;
   }

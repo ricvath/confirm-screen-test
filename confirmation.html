@@ -68,32 +68,8 @@
             </div>
         </div>
         <div class="divider"></div>
-        <div class="share-button">Share this check-in</div>
+        <div class="btn">Share this check-in</div>
     </div>
-
-    <!--script>
-        function getQueryParams() {
-            const params = new URLSearchParams(window.location.search);
-            return {
-                name: params.get('name'),
-                location: params.get('location')
-            };
-        }
-
-        function populateData() {
-            const { name, location } = getQueryParams();
-            if (name && location) {
-                const [locationLeft, locationRight] = location.split(',');
-
-                document.getElementById('name').textContent = name;
-                document.getElementById('profile-photo').src = `assets/img/${name.replace(' ', '_')}.jpg`;
-                document.getElementById('location-left').textContent = locationLeft;
-                document.getElementById('location-right').textContent = locationRight;
-            }
-        }
-
-        window.onload = populateData;
-    </script-->
     <script src="script.js"></script>
 </body>
 

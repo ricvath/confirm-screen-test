@@ -12,6 +12,7 @@
     "locations": [
         { "label": "Holmes Place Potsdamer Platz", "value": "(Tiergarten)" },
         { "label": "Holmes Place Gendarmenmarkt", "value": "(Mitte)" },
-        { "label": "Holmes Place Bismarckstrasse", "value": "(Charlottenburg)" }
+        { "label": "Holmes Place Bismarckstrasse", "value": "(Charlottenburg)" },
+        { "label": "Holmes Place Neue Welt", "value": "(Neukölln)" }
     ]
 }

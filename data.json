@@ -7,16 +7,16 @@
         "Nick Voke",
         "Sara Ravasio",
         "Victoria Roznowski",
-        "Leandro Velasco"
+        "Leandro Velasco",
         "Borislav Marinov"
     ],
     "locations": [
         { "label": "Holmes Place Potsdamer Platz", "value": "(Tiergarten)" },
         { "label": "Holmes Place Gendarmenmarkt", "value": "(Mitte)" },
         { "label": "Holmes Place Bismarckstrasse", "value": "(Charlottenburg)" },
-        { "label": "Holmes Place Neue Welt", "value": "(Neukölln)" }
-        { "label": "Holmes Place Schlossstraße", "value": "(Steglitz)" }
-        { "label": "Holmes Place Ostkreuz", "value": "(Friedrichshain)" }
+        { "label": "Holmes Place Neue Welt", "value": "(Neukölln)" },
+        { "label": "Holmes Place Schlossstraße", "value": "(Steglitz)" },
+        { "label": "Holmes Place Ostkreuz", "value": "(Friedrichshain)" },
         { "label": "Holmes Place Ostkreuz", "value": "(Friedrichshain)" }
     ],
 }

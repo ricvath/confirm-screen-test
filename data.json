@@ -11,13 +11,38 @@
         "Leandro Velasco",
         "Borislav Marinov"
     ],
-    "locations": [
-        { "label": "Holmes Place Potsdamer Platz", "value": "(Tiergarten)" },
-        { "label": "Holmes Place Gendarmenmarkt", "value": "(Mitte)" },
-        { "label": "Holmes Place Bismarckstrasse", "value": "(Charlottenburg)" },
-        { "label": "Holmes Place Neue Welt", "value": "(Neukölln)" },
-        { "label": "Holmes Place Schlossstraße", "value": "(Steglitz)" },
-        { "label": "Holmes Place Ostkreuz", "value": "(Friedrichshain)" },
-        { "label": "Holmes Place Ostkreuz", "value": "(Friedrichshain)" }
-    ]
+    "sportType": {
+        "fitness": [
+            { "label": "Holmes Place Potsdamer Platz", "value": "(Tiergarten)" },
+            { "label": "Holmes Place Gendarmenmarkt", "value": "(Mitte)" },
+            { "label": "Holmes Place Bismarckstrasse", "value": "(Charlottenburg)" },
+            { "label": "Holmes Place Neue Welt", "value": "(Neukölln)" },
+            { "label": "Holmes Place Schlossstraße", "value": "(Steglitz)" },
+            { "label": "Holmes Place Ostkreuz", "value": "(Friedrichshain)" }
+        ],
+        "swimming": [
+            { "label": "Sommerbad Olympiastadion", "value": "(Charlottenburg)" },
+            { "label": "Haubentaucher", "value": "(Friedrichshain)" },
+            { "label": "Badeschiff", "value": "(Treptow)" },
+            { "label": "Schwimmhalle Fischerinsel", "value": "(Mitte)" },
+            { "label": "Sommerbad Kreuzberg", "value": "(Kreuzberg)" },
+            { "label": "Sport- und Lehrschwimmhalle", "value": "(Schöneberg)" },
+            { "label": "Stadtbad & Hotel Oderberger", "value": "(Penzlauer Berg)" },
+            { "label": "Stadtbad Neukölln", "value": "(Neukölln)" },
+            { "label": "Stadtbad Tiergarten", "value": "(Tiergarten)" },
+            { "label": "Stadtbad Wannsee", "value": "(Wannsee)" }
+        ],
+        "bouldering": [
+            { "label": "Der Kegel", "value": "(Friedrichshain)" },
+            { "label": "Bouldergarten", "value": "(Neukölln)" },
+            { "label": "BOULDERKLUB Kreuzberg", "value": "(Kreuzberg)" },
+            { "label": "urban apes - Basement Boulderstudio", "value": "(Kreuzberg)" },
+            { "label": "urban apes - bright side", "value": "(Schöneberg)" },
+            { "label": "Ostblock", "value": "(Rummelsburg)" }
+        ],
+        "beachvolleyball": [
+            { "label": "Beach61", "value": "(Kreuzberg)" },
+            { "label": "BeachMitte", "value": "(Mitte)" }
+        ]
+    }
 }

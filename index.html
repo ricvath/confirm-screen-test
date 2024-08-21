@@ -12,14 +12,24 @@
     <div class="form-container">
         <h2>Select Member and Location</h2>
         <form id="checkin-form">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <select id="name" name="name" required></select>
-            </div>
-            <div class="form-group">
-                <label for="location">Location:</label>
-                <select id="location" name="location" required></select>
-            </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <select id="name" name="name" required>
+                        <option value="">Select...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sportType">Sport Type:</label>
+                    <select id="sportType" name="sportType" required>
+                        <option value="">Select...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <select id="location" name="location" required>
+                        <option value="">Select...</option>
+                    </select>
+                </div>
             <button class="btn" type="submit">Submit</button>
         </form>
     </div>

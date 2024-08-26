@@ -261,6 +261,8 @@ form {
     width: 80px;
     height: 80px;
     border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
   }
   
   .activity-text-area {

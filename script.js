@@ -1,141 +1,141 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('checkin-form')) {
+        initializeCheckInForm();
+    } else if (window.location.pathname.endsWith('confirmation.html')) {
+        populateData();
+    }
+});
+
+function initializeCheckInForm() {
     const form = document.getElementById('checkin-form');
-    const sportTypeSelect = document.getElementById('sportType');
-    const locationSelect = document.getElementById('location');
     const nameSelect = document.getElementById('name');
+    const activitySelect = document.getElementById('activity');
+    const locationSelect = document.getElementById('location');
 
     let data;
 
-    // Fetch JSON data and populate dropdowns
     fetch('data.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(jsonData => {
             data = jsonData;
-            populateSportTypes();
-            populateNames();
+            populateDropdowns(data, nameSelect, activitySelect);
+            activitySelect.addEventListener('change', () => updateLocations(data, activitySelect, locationSelect));
         })
         .catch(error => console.error('Error loading data:', error));
 
-    function populateSportTypes() {
-        const sportTypes = Object.keys(data.sportType);
-        sportTypes.forEach(sport => {
-            const option = document.createElement('option');
-            option.value = sport;
-            option.textContent = sport.charAt(0).toUpperCase() + sport.slice(1);
-            sportTypeSelect.appendChild(option);
+    form.addEventListener('submit', handleFormSubmit);
+}
+
+function populateDropdowns(data, nameSelect, activitySelect) {
+    data.name.forEach(name => addOption(nameSelect, name, name));
+    Object.keys(data.activity).forEach(activity => addOption(activitySelect, activity, activity));
+}
+
+function addOption(selectElement, value, text) {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = text;
+    selectElement.appendChild(option);
+}
+
+function updateLocations(data, activitySelect, locationSelect) {
+    const selectedActivity = activitySelect.value;
+    locationSelect.innerHTML = '<option value="">Select...</option>';
+
+    if (selectedActivity && data.activity[selectedActivity]) {
+        data.activity[selectedActivity].forEach(location => {
+            addOption(locationSelect, `${location.location},${location.district}`, `${location.location} ${location.district}`);
         });
     }
+}
 
-    function populateNames() {
-        data.names.forEach(name => {
-            const option = document.createElement('option');
-            option.value = name;
-            option.textContent = name;
-            nameSelect.appendChild(option);
-        });
-    }
+function handleFormSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const activity = document.getElementById('activity').value;
+    const location = document.getElementById('location').value;
+    window.location.href = `confirmation.html?name=${encodeURIComponent(name)}&activity=${encodeURIComponent(activity)}&location=${encodeURIComponent(location)}`;
+}
 
-    function populateLocations(sport) {
-        locationSelect.innerHTML = '<option value="">Select...</option>';
-        data.sportType[sport].forEach(location => {
-            const option = document.createElement('option');
-            option.value = `${location.label},${location.value}`;
-            option.textContent = `${location.label} ${location.value}`;
-            locationSelect.appendChild(option);
-        });
-    }
+function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        name: params.get('name'),
+        activity: params.get('activity'),
+        location: params.get('location')
+    };
+}
 
-    sportTypeSelect.addEventListener('change', function() {
-        const selectedSport = this.value;
-        if (selectedSport) {
-            populateLocations(selectedSport);
-            locationSelect.disabled = false;
-        } else {
-            locationSelect.innerHTML = '<option value="">Select...</option>';
-            locationSelect.disabled = true;
+function populateData() {
+    const { name, activity, location } = getQueryParams();
+    
+    if (name && activity && location) {
+        const [locationLeft, locationRight] = location.split(',');
+
+        const nameElement = document.getElementById('name');
+        if (nameElement) {
+            nameElement.textContent = name;
         }
-    });
 
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = nameSelect.value;
-            const sportType = sportTypeSelect.value;
-            const location = locationSelect.value;
-            const [locationLabel, locationValue] = location.split(',');
-            const url = `confirmation.html?name=${encodeURIComponent(name)}&sportType=${encodeURIComponent(sportType)}&locationLabel=${encodeURIComponent(locationLabel)}&locationValue=${encodeURIComponent(locationValue)}`;
-            window.location.href = url;
+        const activityElements = ['activity', 'activity-mini'];
+        activityElements.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) element.textContent = activity.charAt(0).toUpperCase() + activity.slice(1);
         });
-    }
 
-    function getQueryParams() {
-        const params = new URLSearchParams(window.location.search);
-        return {
-            name: params.get('name'),
-            sportType: params.get('sportType'),
-            locationLabel: params.get('locationLabel'),
-            locationValue: params.get('locationValue')
-        };
-    }
+        const activityImage = document.getElementById('activity-image');
+        if (activityImage) {
+            activityImage.src = `assets/img/${activity.toLowerCase().replace(/\s+/g, '_')}.jpg`;
+        }
 
-    function populateData() {
-        const { name, sportType, locationLabel, locationValue } = getQueryParams();
+        const profilePhoto = document.getElementById('profile-photo');
+        if (profilePhoto) {
+            profilePhoto.src = `assets/img/${name.replace(/\s+/g, '_')}.jpg`;
+        }
 
-        if (name && sportType && locationLabel && locationValue) {
-            // Set name
-            const nameElement = document.getElementById('name');
-            if (nameElement) {
-                nameElement.textContent = name;
-            }
-
-            // Set profile photo
-            const profilePhoto = document.getElementById('profile-photo');
-            if (profilePhoto) {
-                const formattedName = name.toLowerCase().replace(' ', '_');
-                profilePhoto.src = `assets/img/${formattedName}.jpg`;
-                profilePhoto.onerror = function() {
-                    this.src = 'assets/img/default_profile.jpg';
-                };
-            }
-
-            // Set sport type and activity image
-            const activityNameElement = document.querySelector('.activity-name');
-            const activityImageElement = document.querySelector('.activity-image');
-            const activityNameMiniElement = document.getElementById('activity-name-mini');
-            if (activityNameElement) {
-                activityNameElement.textContent = sportType.charAt(0).toUpperCase() + sportType.slice(1);
-            }
-            if (activityImageElement) {
-                activityImageElement.src = `assets/img/${sportType.toLowerCase()}.jpg`;
-            }
-            if (activityNameMiniElement) {
-                activityNameMiniElement.textContent = sportType.charAt(0).toUpperCase() + sportType.slice(1);
-            }
-
-            // Set location
-            const locationLeftElement = document.getElementById('location-left');
-            const locationRightElement = document.getElementById('location-right');
-            if (locationLeftElement) {
-                locationLeftElement.textContent = locationLabel;
-            }
-            if (locationRightElement) {
-                locationRightElement.textContent = locationValue;
-            }
-
-            // Set date and time
-            const dateTimeElement = document.getElementById('date-time');
-            if (dateTimeElement) {
-                const now = new Date();
-                const dateOptions = { day: '2-digit', month: 'short' };
-                const dateString = now.toLocaleDateString('en-GB', dateOptions);
-                const timeString = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
-                dateTimeElement.textContent = `${dateString}, ${timeString}`;
-            }
+        const locationLeftElement = document.getElementById('location-left');
+        const locationRightElement = document.getElementById('location-right');
+        if (locationLeftElement) {
+            locationLeftElement.textContent = locationLeft;
+        }
+        if (locationRightElement) {
+            locationRightElement.textContent = locationRight;
         }
     }
+}
 
-    // Call populateData when the confirmation page loads
-    if (window.location.pathname.endsWith('confirmation.html')) {
-        document.addEventListener('DOMContentLoaded', populateData);
+//Animations
+window.onload = function () {
+    var seconds = 0;
+    var minutes = 0;
+    var timerElement = document.getElementById('timer');
+  
+    var dateTimeParagraph = document.getElementById('date-time');
+    var now = new Date();
+    var dateOptions = { day: '2-digit', month: 'short' };
+    var dateString = now.toLocaleDateString('en-GB', dateOptions);
+    var timeString = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+  
+    dateString = dateString.replace(/,.*$/, "");
+    dateTimeParagraph.textContent = dateString + ', ' + timeString;
+  
+    function updateTimer() {
+      seconds++;
+      if (seconds == 60) {
+        minutes++;
+        seconds = 0;
+      }
+      if (minutes == 60) {
+        minutes = 0;
+      }
+      timerElement.textContent = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
     }
-});
+  
+    // Start the timer when the page loads
+    setInterval(updateTimer, 1000);
+};

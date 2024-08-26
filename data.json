@@ -1,5 +1,5 @@
 {
-    "names": [
+    "name": [
         "Richard Horvath",
         "Maxim Pirsky",
         "Anna Koslowski",
@@ -11,38 +11,38 @@
         "Leandro Velasco",
         "Borislav Marinov"
     ],
-    "sportType": {
-        "fitness": [
-            { "label": "Holmes Place Potsdamer Platz", "value": "(Tiergarten)" },
-            { "label": "Holmes Place Gendarmenmarkt", "value": "(Mitte)" },
-            { "label": "Holmes Place Bismarckstrasse", "value": "(Charlottenburg)" },
-            { "label": "Holmes Place Neue Welt", "value": "(Neukölln)" },
-            { "label": "Holmes Place Schlossstraße", "value": "(Steglitz)" },
-            { "label": "Holmes Place Ostkreuz", "value": "(Friedrichshain)" }
+    "activity": {
+        "Fitness": [
+            { "location": "Holmes Place Potsdamer Platz", "district": "(Tiergarten)" },
+            { "location": "Holmes Place Gendarmenmarkt", "district": "(Mitte)" },
+            { "location": "Holmes Place Bismarckstrasse", "district": "(Charlottenburg)" },
+            { "location": "Holmes Place Neue Welt", "district": "(Neukölln)" },
+            { "location": "Holmes Place Schlossstraße", "district": "(Steglitz)" },
+            { "location": "Holmes Place Ostkreuz", "district": "(Friedrichshain)" }
         ],
-        "swimming": [
-            { "label": "Sommerbad Olympiastadion", "value": "(Charlottenburg)" },
-            { "label": "Haubentaucher", "value": "(Friedrichshain)" },
-            { "label": "Badeschiff", "value": "(Treptow)" },
-            { "label": "Schwimmhalle Fischerinsel", "value": "(Mitte)" },
-            { "label": "Sommerbad Kreuzberg", "value": "(Kreuzberg)" },
-            { "label": "Sport- und Lehrschwimmhalle", "value": "(Schöneberg)" },
-            { "label": "Stadtbad & Hotel Oderberger", "value": "(Penzlauer Berg)" },
-            { "label": "Stadtbad Neukölln", "value": "(Neukölln)" },
-            { "label": "Stadtbad Tiergarten", "value": "(Tiergarten)" },
-            { "label": "Stadtbad Wannsee", "value": "(Wannsee)" }
+        "Swimming": [
+            { "location": "Sommerbad Olympiastadion", "district": "(Charlottenburg)" },
+            { "location": "Haubentaucher", "district": "(Friedrichshain)" },
+            { "location": "Badeschiff", "district": "(Treptow)" },
+            { "location": "Schwimmhalle Fischerinsel", "district": "(Mitte)" },
+            { "location": "Sommerbad Kreuzberg", "district": "(Kreuzberg)" },
+            { "location": "Sport- und Lehrschwimmhalle", "district": "(Schöneberg)" },
+            { "location": "Stadtbad & Hotel Oderberger", "district": "(Penzlauer Berg)" },
+            { "location": "Stadtbad Neukölln", "district": "(Neukölln)" },
+            { "location": "Stadtbad Tiergarten", "district": "(Tiergarten)" },
+            { "location": "Stadtbad Wannsee", "district": "(Wannsee)" }
         ],
-        "bouldering": [
-            { "label": "Der Kegel", "value": "(Friedrichshain)" },
-            { "label": "Bouldergarten", "value": "(Neukölln)" },
-            { "label": "BOULDERKLUB Kreuzberg", "value": "(Kreuzberg)" },
-            { "label": "urban apes - Basement Boulderstudio", "value": "(Kreuzberg)" },
-            { "label": "urban apes - bright side", "value": "(Schöneberg)" },
-            { "label": "Ostblock", "value": "(Rummelsburg)" }
+        "Bouldering": [
+            { "location": "Der Kegel", "district": "(Friedrichshain)" },
+            { "location": "Bouldergarten", "district": "(Neukölln)" },
+            { "location": "BOULDERKLUB Kreuzberg", "district": "(Kreuzberg)" },
+            { "location": "urban apes - Basement Boulderstudio", "district": "(Kreuzberg)" },
+            { "location": "urban apes - bright side", "district": "(Schöneberg)" },
+            { "location": "Ostblock", "district": "(Rummelsburg)" }
         ],
-        "beachvolleyball": [
-            { "label": "Beach61", "value": "(Kreuzberg)" },
-            { "label": "BeachMitte", "value": "(Mitte)" }
+        "Beach-volleyball": [
+            { "location": "Beach61", "district": "(Kreuzberg)" },
+            { "location": "BeachMitte", "district": "(Mitte)" }
         ]
     }
 }

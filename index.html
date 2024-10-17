@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="manifest" href="/manifest.json">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#6BBC89">
-    <link rel="apple-touch-icon" href="/icon-192x192.png">
-    <title>Check-In Pre-selector</title>
+    <link rel="apple-touch-icon" href="/assets/icons/oscx192.png">
+    <title>Check-In</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -37,6 +37,14 @@
         </form>
     </div>
     <script src="script.js"></script>
+    <script>
+        function adjustForFullscreen() {
+            document.body.style.height = window.innerHeight + 'px';
+        }
+        window.addEventListener('resize', adjustForFullscreen);
+        window.addEventListener('orientationchange', adjustForFullscreen);
+        document.addEventListener('DOMContentLoaded', adjustForFullscreen);
+    </script>
 </body>
 
 </html>

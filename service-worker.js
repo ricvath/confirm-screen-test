@@ -5,6 +5,7 @@ const urlsToCache = [
   '/confirmation.html',
   '/styles.css',
   '/script.js',
+  '/assets/'
   // Add other important assets to cache
 ];
 

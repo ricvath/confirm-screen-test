@@ -2,6 +2,7 @@ const CACHE_NAME = 'your-app-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/confirmation.html',
   '/styles.css',
   '/script.js',
   // Add other important assets to cache

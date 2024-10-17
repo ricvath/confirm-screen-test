@@ -52,7 +52,7 @@
   body {
     font-family: 'APC', sans-serif;
     background-color: #6BBC89;
-    margin: 0;
+    margin: -20px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
